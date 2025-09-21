@@ -1,0 +1,96 @@
+:root {
+  --olive: #556B2F;      /* olive green */
+  --text: #1a1a1a;
+  --muted: #6b7280;      /* subtle gray */
+  --bg: #ffffff;         /* white page */
+  --radius: 18px;
+  --shadow: 0 6px 24px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.05);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 960px;
+  margin: 6vh auto;
+  padding: 0 20px 60px;
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Olive green header box */
+.brand-box {
+  width: 100%;
+  background: var(--olive);
+  color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  text-align: center;
+}
+.brand-box h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+/* Tagline */
+.tagline {
+  margin: 4px 0 8px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* Grid of four non-clickable boxes */
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #f8fafc;                /* very light grey to pop on white */
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  user-select: text;                   /* not clickable */
+  cursor: default;
+}
+
+/* Email line */
+.contact {
+  margin-top: 8px;
+}
+.email {
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: var(--text);
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;        /* stack on small screens */
+  }
+  .container {
+    margin-top: 4vh;
+  }
+}
